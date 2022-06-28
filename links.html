@@ -23,11 +23,22 @@
             </ul>
     </header>
 
-    <section class="banner2" id="home">
+    <section class="banner" id="home" style='
+    background: url("img/banner\ \(1\).jpg");
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    opacity: 0.9;
+    '>
         <div class="textBx">
             <h2>DevRipples<br><span>Beginners Documents.</span></h2>
 
-            <h3>Here you can find all the docs available to get started with installation and setup.</h3>
+            <h4>Here you can find all the docs available to get started with installation and setup.</h4>
         </div>
     </section>
    
@@ -70,4 +81,39 @@
   </div>
 
 </body>
+<script>
+    function toggleMenu(e)
+    {
+      
+      var menubar = document.getElementById("menu");
+      var menulist = document.querySelectorAll(".menu li a");
+
+      if(menubar.style.display=="block")
+      {  
+          menubar.style.display = "none";
+          e.style.backgroundImage = "url('img/menu.png')";
+        }
+        else
+        {
+            e.style.backgroundImage = "url('img/close.png')";
+            menubar.style.display = "block";
+            
+            for(let i=0; i<menulist.length;i++)
+            {
+                menulist[i].addEventListener("click",blockli,true);
+            }
+            
+        }
+        
+        function blockli()
+        {
+            menubar.style.display = "none";
+            e.style.backgroundImage = "url('img/menu.png')";
+        }
+    
+    }
+    
+    
+     
+</script>
 </html>
